@@ -1,7 +1,7 @@
 import random
-def extract_mentions(entries, story_reshares):
+def extract_entries(tags, story_reshares):
     """
-    Extract mentions from the provided text.
+    Extract tags from the provided text.
 
     Args:
     - text (str): The text containing mentions.
@@ -11,7 +11,7 @@ def extract_mentions(entries, story_reshares):
     """
     # Split the text into lines and extract mentions
     mentions = []
-    for line in entries.split('\n'):
+    for line in tags.split('\n'):
         mention = line.split('@')[0].strip()
         # Check if the mention is not empty and does not contain only whitespace characters
         if mention and not all(char.isspace() or not char.isprintable() for char in mention) and '￼' not in mention:
@@ -23,7 +23,7 @@ def extract_mentions(entries, story_reshares):
 
 if __name__ == "__main__":
     # Example text containing mentions
-    entries = """
+    tags = """
     
     pbs.jayden  @devinnn.t1 
 
@@ -712,8 +712,6 @@ if __name__ == "__main__":
     undesireble@moimran2668
     ￼
     lntensively@manitsharm05
-    ￼
-    metadr0n13The multiple entries are crazy
     ￼politehex@m1ddleschoolbully
     ￼politehex@g0thkardashian 
     ￼mycuhll@dpr.n0va
@@ -1637,8 +1635,10 @@ if __name__ == "__main__":
 
     """
 
-    story_reshares = ['Wonginthong', 'Oreodasillygoose' , '__benhanma__', '1der9c', '4nderseepy', 'Jenni', 'Brownmanray', 'Fresshwater', 'Kwame.morrison', 'Dwade_wayne3', 'theskreetpoet' 'Marcsuniverse', 'C.lwolfe', 'Dez_zuehlke', 'Evelynsuzettem', 'Leoarmdz', 'Ne5t0r_', 'LUVV4ISHAN', 'Aanthonyle', 'Jomai__', 'Scvtta', 'Bwong.20', 'Calum_h7123', 'Wh0s_j1mmy', 'Jjjjulian___', 'Thehighherald', 'Zatlonnn', 'PBS.jayden', 'Austiinha', 'Alex', 'Nuyorkluv' , 'Bigb00ty_john', 'Think_ink1', 'Balabcoagaga' , 'Indio_zhensi', 'Sunnelkim' , 'Vamp3doutt', 'Andrew_liscio', 'Sk844u', 'Frank_fiend', 'Storm_rider81', 'Sakura_pangelinan', 'Sabho8', 'Towobou']
+    story_reshares = ['Wonginthong', 'Oreodasillygoose' , '__benhanma__', '1der9c', '4nderseepy', 'Jenni', 'Brownmanray', 'Fresshwater', 'Kwame.morrison', 'Dwade_wayne3', 'Marcsuniverse', 'C.lwolfe', 'Dez_zuehlke', 'Evelynsuzettem', 'Leoarmdz', 'Ne5t0r_', 'LUVV4ISHAN', 'Aanthonyle', 'Jomai__', 'Scvtta', 'Bwong.20', 'Calum_h7123', 'Wh0s_j1mmy', 'Jjjjulian___', 'Thehighherald', 'Zatlonnn', 'PBS.jayden', 'Austiinha', 'Alex', 'Nuyorkluv' , 'Bigb00ty_john', 'Think_ink1', 'Balabcoagaga' , 'Indio_zhensi', 'Sunnelkim' , 'Vamp3doutt', 'Andrew_liscio', 'Sk844u', 'Frank_fiend', 'Storm_rider81', 'Sakura_pangelinan', 'Sabho8', 'Towobou','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet',]
 
-    mentions = extract_mentions(entries, story_reshares)
+    mentions = extract_entries(tags, story_reshares)
+    print(mentions)
+    print('Out of', len(mentions), 'entries, the 2 winners are:')
     random_mentions = random.sample(mentions, 2)
-    print("2 winners:", random_mentions)
+    print(random_mentions)
