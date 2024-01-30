@@ -1638,7 +1638,7 @@ if __name__ == "__main__":
     story_reshares = ['Wonginthong', 'Oreodasillygoose' , '__benhanma__', '1der9c', '4nderseepy', 'Jenni', 'Brownmanray', 'Fresshwater', 'Kwame.morrison', 'Dwade_wayne3', 'Marcsuniverse', 'C.lwolfe', 'Dez_zuehlke', 'Evelynsuzettem', 'Leoarmdz', 'Ne5t0r_', 'LUVV4ISHAN', 'Aanthonyle', 'Jomai__', 'Scvtta', 'Bwong.20', 'Calum_h7123', 'Wh0s_j1mmy', 'Jjjjulian___', 'Thehighherald', 'Zatlonnn', 'PBS.jayden', 'Austiinha', 'Alex', 'Nuyorkluv' , 'Bigb00ty_john', 'Think_ink1', 'Balabcoagaga' , 'Indio_zhensi', 'Sunnelkim' , 'Vamp3doutt', 'Andrew_liscio', 'Sk844u', 'Frank_fiend', 'Storm_rider81', 'Sakura_pangelinan', 'Sabho8', 'Towobou','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet','theskreetpoet',]
 
     mentions = extract_entries(tags, story_reshares)
-    print(mentions)
+    # print(mentions)
     print('Out of', len(mentions), 'entries, the 2 winners are:')
     random_mentions = random.sample(mentions, 2)
     print(random_mentions)
